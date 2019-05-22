@@ -1,1 +1,1 @@
-CAQueue = Circular Queue
+CAQueue = Circular Array Queue
