@@ -11,13 +11,10 @@ public class CAQueue {
         back = capacity - 1;
         front = 0;
         circularArray = new ArrayList<>(capacity);
-
-        // Check what's inside the array
-        System.out.println(circularArray);
     }
 
-    boolean isFull(CAQueue caQueue) {
-        return (circularArray.size() == caQueue.capacity);
+    boolean isFull() {
+        return (circularArray.size() == capacity);
     }
 
     public int getFront() {
@@ -28,20 +25,16 @@ public class CAQueue {
         return this.back;
     }
 
-    // Adds object to the queue
+    // Adds item to the queue
     public void enqueue(int item) {
-        if (isFull(this))
-            return;
-        this.back = (this.back + 1) % this.capacity;
+        if (!isFull()) {
+            circularArray.add(back, item);
 
-
-        // https://www.geeksforgeeks.org/queue-set-1introduction-and-array-implementation/
-        // https://docs.oracle.com/middleware/1213/coherence/java-reference/com/tangosol/util/CircularArrayList.html
-
-
+            back = ((back + 1) % capacity);
+        }
     }
 
-    // Removes object from the queue
+    // Removes item from the queue
     public void dequeue() {
 
     }

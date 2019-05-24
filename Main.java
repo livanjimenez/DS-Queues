@@ -4,6 +4,7 @@ public class Main {
     }
 
     public Main() {
-
+        CAQueue c = new CAQueue(10);
+        
     }
 }
