@@ -11,9 +11,12 @@ public class CAQueue {
         back = capacity - 1;
         front = 0;
         circularArray = new ArrayList<>(capacity);
+        
     }
 
     boolean isFull() {
+        // .size() doesnt work?
+
         return (circularArray.size() == capacity);
     }
 
@@ -31,6 +34,8 @@ public class CAQueue {
             circularArray.add(back, item);
 
             back = ((back + 1) % capacity);
+        } else {
+            System.out.println("Queue is full!");
         }
     }
 
