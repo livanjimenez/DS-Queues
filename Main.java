@@ -6,7 +6,8 @@ public class Main {
     }
 
     public Main() {
-        printCAQueue();
+        // Remove comment to test
+        //printCAQueue();
     }
 
     public void printCAQueue() {
