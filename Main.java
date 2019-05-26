@@ -26,9 +26,12 @@ public class Main {
             caQueue.enqueue(item);
         }
         
-        // print circular array
-        System.out.println(caQueue.circularArray);
+        // test dequeue
+        caQueue.dequeue();
 
+        // showQueue
+        caQueue.showQueue();
+        
         in.close();
     }
 }

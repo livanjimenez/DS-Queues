@@ -46,7 +46,7 @@ public class CAQueue {
     public int dequeue() {
         int data = circularArray.get(front);
 
-        if (!circularArray.isEmpty()) {
+        if (!isEmpty()) {
             front = ((front + 1) % capacity);
             size--;
         } else {
@@ -57,4 +57,20 @@ public class CAQueue {
         return data;
     }
 
+    public boolean isEmpty() {
+        return getSize() == 0;
+    }
+
+    public void showQueue() {
+        System.out.print(":");
+        if (size < capacity) {
+            for (int i = 0; i < size; i++) {
+                System.out.print(circularArray.get((front + i) % capacity) + " ");
+            }
+        } else
+            for (int i = 0; i < capacity; i++) {
+                System.out.print(circularArray.get((front + i) % capacity) + " ");
+            }
+        System.out.println("");
+    }
 }
