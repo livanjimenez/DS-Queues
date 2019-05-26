@@ -9,10 +9,7 @@ public class CAQueue {
 
     public CAQueue(int capacity) {
         this.capacity = capacity;
-        // back = capacity - 1;
-        // front = 0;
         circularArray = new ArrayList<>(capacity);
-
     }
 
     boolean isFull() {
@@ -52,8 +49,7 @@ public class CAQueue {
         } else {
             System.out.println("Queue is empty!");
         }
-
-        // keep it circular
+        
         return data;
     }
 
