@@ -25,3 +25,7 @@ public class SSQueue extends MyStack {
         return item;
     }
 }
+
+//https://www.geeksforgeeks.org/queue-using-stacks/
+//https://algs4.cs.princeton.edu/13stacks/QueueWithTwoStacks.java.html
+

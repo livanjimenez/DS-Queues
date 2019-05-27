@@ -52,9 +52,5 @@ public class Main {
         SSQueue ssQueue = new SSQueue();
         
         ssQueue.enqueue(1);
-        ssQueue.enqueue(1);
-        ssQueue.enqueue(2);
-        ssQueue.dequeue();
-        System.out.println(ssQueue.stack);
     }
 }
