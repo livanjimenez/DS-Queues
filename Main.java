@@ -7,10 +7,12 @@ public class Main {
 
     public Main() {
         // Remove comment to test
-        //printCAQueue();
+        //testCAQueue();
+        //testMyStack();
+        testSSQueue();
     }
 
-    public void printCAQueue() {
+    public void testCAQueue() {
         Scanner in = new Scanner(System.in);
 
         System.out.print("Enter a capacity for the queue: ");
@@ -34,5 +36,25 @@ public class Main {
         caQueue.showQueue();
         
         in.close();
+    }
+
+    public void testMyStack() {
+        MyStack myStack = new MyStack();
+
+        myStack.push(1);
+        myStack.push(1);
+        myStack.push(2);
+        myStack.pop();
+        System.out.println(myStack.stack);
+    }
+
+    public void testSSQueue() {
+        SSQueue ssQueue = new SSQueue();
+        
+        ssQueue.enqueue(1);
+        ssQueue.enqueue(1);
+        ssQueue.enqueue(2);
+        ssQueue.dequeue();
+        System.out.println(ssQueue.stack);
     }
 }
