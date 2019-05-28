@@ -1,4 +1,4 @@
-public class SSQueue extends MyStack {
+public class SSQueue {
     MyStack stack1;
     MyStack stack2;
 
@@ -11,21 +11,15 @@ public class SSQueue extends MyStack {
         stack1.push(item);
     }
 
-    public int dequeue() {
-        while (!stack1.isEmpty()) {
+    public void dequeue() {
+        if (stack2.isEmpty()) {
             stack2.push(stack1.pop());
         }
 
-        int item = stack2.pop();
+        stack2.pop();
+    }
 
-        while (!stack2.isEmpty()) {
-            stack1.push(stack2.pop());
-        }
-
-        return item;
+    public void printSSQueue() {
+        System.out.println(stack1.stack);
     }
 }
-
-//https://www.geeksforgeeks.org/queue-using-stacks/
-//https://algs4.cs.princeton.edu/13stacks/QueueWithTwoStacks.java.html
-

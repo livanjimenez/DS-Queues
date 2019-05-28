@@ -7,9 +7,42 @@ public class Main {
 
     public Main() {
         // Remove comment to test
-        //testCAQueue();
-        //testMyStack();
-        testSSQueue();
+        // testCAQueue();
+        // testMyStack();
+        // testSSQueue();
+
+        /******* Comparison of Queues *******/
+        int num = 1000000;
+        
+        SSQueue ssQueue = new SSQueue();
+        CAQueue caQueue = new CAQueue(num);
+
+        long startTime = System.nanoTime();
+
+
+        // for (int i = 0; i < num; i++) {
+        //     //caQueue.enqueue(i + num);
+        //     //caQueue.dequeue();
+        //     ssQueue.enqueue(i + num);
+        //     ssQueue.dequeue();
+        // }
+
+        for (int i = 0; i < num; i++) {
+            //ssQueue.enqueue(num);
+            caQueue.enqueue(num);
+
+            if (Math.random() < 0.5) {
+                //ssQueue.enqueue(i + num);
+                caQueue.enqueue(i + num);
+            } else {
+                //ssQueue.dequeue();
+                caQueue.dequeue();
+            }
+        }
+
+        long endTime = System.nanoTime();
+        long totalTime = endTime - startTime;
+        System.out.println(num + "," + totalTime);
     }
 
     public void testCAQueue() {
@@ -28,13 +61,13 @@ public class Main {
             int item = in.nextInt();
             caQueue.enqueue(item);
         }
-        
+
         // test dequeue
         caQueue.dequeue();
 
         // showQueue
         caQueue.showQueue();
-        
+
         in.close();
     }
 
@@ -50,7 +83,12 @@ public class Main {
 
     public void testSSQueue() {
         SSQueue ssQueue = new SSQueue();
-        
+
         ssQueue.enqueue(1);
+        ssQueue.enqueue(3);
+        ssQueue.enqueue(1);
+        ssQueue.dequeue();
+
+        ssQueue.printSSQueue();
     }
 }
